@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="696.0" prefWidth="1187.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GraphiqueController">
+    <children>
+      <ImageView fitHeight="700.0" fitWidth="1200.0" layoutX="-2.0" layoutY="-4.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/agent-main-main-dans-main-cle-doigt_1421-85.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="397.0" layoutY="198.0">
+         <children>
+            <Rectangle arcHeight="60.0" arcWidth="60.0" fill="#7fb2e1ad" height="392.0" stroke="#c72626d8" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" width="364.0" />
+            <ImageView fitHeight="146.0" fitWidth="166.0" layoutX="115.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/User_48px.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="14.0" layoutY="163.0" prefHeight="31.0" prefWidth="95.0" text="Username :" textFill="#200fb5">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="username" layoutX="125.0" layoutY="161.0" prefHeight="31.0" prefWidth="230.0" promptText="Username" unFocusColor="#dd4a4a">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <Label layoutX="14.0" layoutY="222.0" prefHeight="21.0" prefWidth="95.0" text="Password :" textFill="#200fb5">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="password" layoutX="125.0" layoutY="217.0" prefHeight="31.0" prefWidth="230.0" promptText="Password" unFocusColor="#bc2c2c">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="loginButton" buttonType="RAISED" layoutX="130.0" layoutY="305.0" onAction="#login" onKeyPressed="#verifier" prefHeight="31.0" prefWidth="127.0" ripplerFill="#393ccc" style="-fx-background-color: #ccccff;" text="Log in">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label layoutX="540.0" layoutY="44.0" prefHeight="38.0" prefWidth="346.0" text="Nso Boyz Express">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="33.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="97.0" fitWidth="95.0" layoutX="417.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.jpeg" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

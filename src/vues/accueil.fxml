@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="723.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AccueilController">
+   <children>
+      <JFXTabPane layoutX="-1.0" layoutY="43.0" prefHeight="700.0" prefWidth="1200.0" tabClosingPolicy="UNAVAILABLE" tabMinWidth="500.0">
+         <tabs>
+            <Tab closable="false" text="Tenant Page">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1361.0">
+                     <children>
+                        <TableView fx:id="tableLocataire" layoutX="14.0" layoutY="29.0" prefHeight="561.0" prefWidth="709.0">
+                          <columns>
+                            <TableColumn fx:id="codeClient" prefWidth="46.0" text="Code" />
+                            <TableColumn fx:id="firstnameClient" prefWidth="119.0" text="Firstname" />
+                              <TableColumn fx:id="lastnameClient" minWidth="0.0" prefWidth="117.0" text="Lastname" />
+                              <TableColumn fx:id="genderClient" prefWidth="63.0" text="Gender" />
+                              <TableColumn fx:id="jobClient" prefWidth="73.0" text="Job" />
+                              <TableColumn fx:id="mailClient" prefWidth="136.0" text="Mail" />
+                              <TableColumn fx:id="phoneClient" prefWidth="63.0" text="Phone" />
+                              <TableColumn fx:id="birthDateClient" prefWidth="91.0" text="Birth date" />
+                          </columns>
+                        </TableView>
+                        <AnchorPane layoutX="744.0" layoutY="53.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="112.0" prefHeight="47.0" prefWidth="227.0" style="-fx-border-color: #5555ff;" text="Add a tenant">
+                                 <font>
+                                    <Font name="Copperplate Gothic Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="8.0" layoutY="100.0" text="Firstname :" />
+                              <JFXTextField fx:id="firstname" layoutX="93.0" layoutY="84.0" prefHeight="31.0" prefWidth="329.0" />
+                              <Label layoutX="8.0" layoutY="159.0" text="Lastname :" />
+                              <JFXTextField fx:id="lastname" layoutX="93.0" layoutY="146.0" prefHeight="31.0" prefWidth="329.0" />
+                              <Label layoutX="27.0" layoutY="216.0" text="Phone :" />
+                              <JFXTextField fx:id="phone" layoutX="91.0" layoutY="203.0" prefHeight="31.0" prefWidth="332.0" />
+                              <Label layoutX="273.0" layoutY="414.0" text="Gender :" />
+                              <JFXComboBox fx:id="gender" layoutX="344.0" layoutY="398.0" prefHeight="31.0" prefWidth="79.0" />
+                              <Label layoutX="40.0" layoutY="288.0" text="Mail :" />
+                              <JFXTextField fx:id="mail" layoutX="93.0" layoutY="275.0" prefHeight="31.0" prefWidth="329.0" />
+                              <Label layoutY="412.0" text="Birth Date :" />
+                              <JFXDatePicker fx:id="birthdate" layoutX="91.0" layoutY="397.0" prefHeight="31.0" prefWidth="177.0" />
+                              <Label layoutX="43.0" layoutY="348.0" text="Job :" />
+                              <JFXTextField fx:id="job" layoutX="94.0" layoutY="335.0" prefHeight="31.0" prefWidth="329.0" />
+                              <JFXButton fx:id="add" layoutX="190.0" layoutY="481.0" onAction="#ajouterTenant" prefHeight="31.0" prefWidth="111.0" style="-fx-background-color: #11ccff;" text="Add">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                        <JFXButton fx:id="delete" layoutX="584.0" layoutY="603.0" prefHeight="31.0" prefWidth="111.0" style="-fx-background-color: #11ccff;" text="Delete">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
+                        <JFXButton fx:id="showInfo" layoutX="472.0" layoutY="602.0" style="-fx-background-color: #ffccdd;" text="Show Infos">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
+                        <JFXButton fx:id="modify" layoutX="356.0" layoutY="602.0" prefHeight="31.0" prefWidth="96.0" style="-fx-background-color: #ccffaa;" text="Modify">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
+                        <JFXButton fx:id="refreshClient" layoutX="23.0" layoutY="602.0" onAction="#refreshClient" style="-fx-border-color: #0000ff;" text="Refresh">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="printAllClient" layoutX="112.0" layoutY="602.0" onAction="#printAllClient" style="-fx-border-color: #00ff00;" text="Print All">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXCheckBox fx:id="sendClientMail" layoutX="199.0" layoutY="608.0" text="Send by Mail" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab closable="false" text="Paiement Page">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="640.0" prefWidth="1200.0">
+                     <children>
+                        <TableView fx:id="tableFactures" layoutX="14.0" layoutY="49.0" prefHeight="550.0" prefWidth="719.0">
+                           <columns>
+                              <TableColumn fx:id="codeFacture" prefWidth="43.6666259765625" text="Code" />
+                              <TableColumn fx:id="firstnameFacture" prefWidth="118.0" text="Firstname" />
+                              <TableColumn fx:id="lastnameFacture" minWidth="0.0" prefWidth="123.3333740234375" text="Lastname" />
+                              <TableColumn fx:id="paidtheFacture" prefWidth="77.6666259765625" text="Paid the" />
+                              <TableColumn fx:id="fromFacture" prefWidth="81.3333740234375" text="From" />
+                              <TableColumn fx:id="toFacture" prefWidth="88.66650390625" text="To" />
+                              <TableColumn fx:id="amountFacture" prefWidth="77.66650390625" text="Amount" />
+                              <TableColumn fx:id="typeFacture" prefWidth="104.333251953125" text="Type" />
+                           </columns>
+                        </TableView>
+                        <AnchorPane layoutX="758.0" layoutY="93.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="99.0" prefHeight="47.0" prefWidth="227.0" style="-fx-border-color: #5555ff;" text="Add a Bill">
+                                 <font>
+                                    <Font name="Copperplate Gothic Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="159.0" text="Name :" />
+                              <Label layoutY="216.0" text="Amount :" />
+                              <JFXTextField fx:id="amount" layoutX="78.0" layoutY="203.0" prefHeight="31.0" prefWidth="287.0" />
+                              <Label layoutX="24.0" layoutY="106.0" text="Type :" />
+                              <JFXComboBox fx:id="type" layoutX="80.0" layoutY="88.0" prefHeight="31.0" prefWidth="124.0" />
+                              <Label layoutX="19.0" layoutY="275.0" text="From :" />
+                              <JFXDatePicker fx:id="dateBegin" layoutX="77.0" layoutY="263.0" prefHeight="31.0" prefWidth="335.0" />
+                              <Label layoutX="35.0" layoutY="323.0" text="To :" />
+                              <JFXButton fx:id="addBill" layoutX="171.0" layoutY="403.0" onAction="#ajouterBill" prefHeight="31.0" prefWidth="111.0" style="-fx-background-color: #11ccff;" text="Add">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </JFXButton>
+                              <JFXComboBox fx:id="billName" layoutX="78.0" layoutY="142.0" prefHeight="31.0" prefWidth="337.0" />
+                              <Label layoutX="375.0" layoutY="215.0" text="XAF" />
+                              <JFXDatePicker fx:id="dateEnd" layoutX="77.0" layoutY="312.0" prefHeight="31.0" prefWidth="333.0" />
+                              <JFXTextField fx:id="typeOther" disable="true" layoutX="213.0" layoutY="88.0" prefHeight="31.0" prefWidth="205.0" />
+                           </children>
+                        </AnchorPane>
+                        <JFXButton fx:id="printButton" layoutX="581.0" layoutY="608.0" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #11ccff;" text="Print the bill">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
+                        <JFXButton fx:id="refreshBill" layoutX="21.0" layoutY="607.0" onAction="#refreshBill" style="-fx-border-color: #ffaa00;" text="Refresh">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="clearTable" layoutX="103.0" layoutY="607.0" onAction="#clearTable" prefHeight="33.0" prefWidth="133.0" style="-fx-border-color: #00ff00;" text="Clear the history">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="printAllBill" layoutX="629.0" layoutY="11.0" onAction="#printAllBill" style="-fx-border-color: #f0f;" text="Print History">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXDatePicker fx:id="beginHistory" layoutX="47.0" layoutY="11.0" prefHeight="31.0" prefWidth="170.0" />
+                        <JFXDatePicker fx:id="endHistory" layoutX="255.0" layoutY="11.0" />
+                        <Label layoutX="5.0" layoutY="23.0" text="From" />
+                        <Label layoutX="230.0" layoutY="23.0" text="To" />
+                        <JFXCheckBox fx:id="sendBillMail" layoutX="466.0" layoutY="22.0" text="Send by mail" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <JFXButton fx:id="changeSettings" layoutX="1003.0" layoutY="8.0" onAction="#changeSettings" style="-fx-border-color: #3333ff;" text="Change Admin Settings">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton fx:id="disconnect" layoutX="893.0" layoutY="8.0" onAction="#disconnect" style="-fx-border-color: #ffaa00;" text="Disconnect">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+   </children>
+</AnchorPane>
